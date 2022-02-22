@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    resource_class: small
     docker:
       - image: firestarteralchemic/circleci-learning-docker:latest
     steps:
@@ -8,3 +9,6 @@ jobs:
       - run:
           command: |
             make
+      - store_artifacts:
+              path: bin/test
+              destination: artifact-test
