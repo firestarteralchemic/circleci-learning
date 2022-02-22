@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: firestarteralchemic/circleci-learning-docker:latest
+    steps:
+      - checkout
+      - run:
+          command: |
+            make
